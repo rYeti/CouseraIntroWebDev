@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Developer Portfolio | Semantic HTML & Accessibility</title>
+        <meta name="description" content="A semantic HTML portfolio showcasing front-end development projects, skills, and contact information with full accessibility and SEO best practices.">
+        <meta name="keywords" content="web developer, portfolio, HTML5, CSS3, JavaScript, accessibility, responsive design">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="favicon.ico">
+    </head>
+    <body>
+
+        <header class="site-header">
+            <div class="header-container">
+                <div class="site-branding">
+                    <h1>Developer Portfolio</h1>
+                    <p class="tagline">Front-end development with a focus on accessibility and semantic HTML</p>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav aria-label="Primary navigation" id="main-nav" class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                </nav>
+        </header>
+
+        <main id="main-content">
+            <section id="about-me" aria-labelledby="about-me-title">
+                <h2 id="about-me-title">About Me</h2>
+                <p>I'm a front-end developer focused on building accessible, responsive web experiences. I enjoy turning design concepts into performant, maintainable code and learning new web platform features.</p>
+            </section>
+
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title">Projects</h2>
+                <div class="filter-buttons" aria-label="Filter projects by category">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" data-filter="responsive" aria-pressed="false">Responsive</button>
+                    <button class="filter-btn" data-filter="interactive" aria-pressed="false">Interactive</button>
+                </div>
+                <div class="projects-list">
+                    <article class="project" aria-labelledby="proj1-title" data-category="responsive">
+                        <figure>
+                            <img src="placeholder-project-1.png" alt="Project One screenshot showing responsive layout and navigation" class="project-img" role="button" tabindex="0">
+                            <figcaption>Project One — Demo screenshot</figcaption>
+                        </figure>
+                        <h3 id="proj1-title">Project One</h3>
+                        <p>A small web app demonstrating responsive layout and accessible components. Built with semantic HTML, CSS, and vanilla JavaScript.</p>
+                    </article>
+
+                    <article class="project" aria-labelledby="proj2-title" data-category="interactive">
+                        <figure>
+                            <img src="placeholder-project-2.png" alt="Project Two screenshot showing an interactive component with keyboard focus styles" class="project-img" role="button" tabindex="0">
+                            <figcaption>Project Two — Demo screenshot</figcaption>
+                        </figure>
+                        <h3 id="proj2-title">Project Two</h3>
+                        <p>An interactive UI component library focusing on keyboard navigation and ARIA patterns.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="skills" aria-labelledby="skills-title">
+                <h2 id="skills-title">Skills</h2>
+                <ul>
+                    <li>HTML5 & Semantic Markup</li>
+                    <li>CSS3 (Flexbox, Grid, Responsive Design)</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Accessibility (a11y) & ARIA</li>
+                    <li>Version Control with Git</li>
+                    <li>Basic React</li>
+                </ul>
+            </section>
+
+            <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title">Contact</h2>
+                <form action="#" method="post" aria-describedby="contact-desc">
+                    <p id="contact-desc">Send a message — I typically respond within two business days.</p>
+
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" required aria-describedby="name-error">
+                        <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" required aria-describedby="email-error">
+                        <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="6" required aria-describedby="message-help message-error"></textarea>
+                        <small id="message-help">Please describe your inquiry or request in detail.</small>
+                        <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer role="contentinfo" aria-label="Footer">
+            <p>&copy; 2026 Your Name. <a href="#">Contact</a></p>
+        </footer>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
